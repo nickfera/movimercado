@@ -1,0 +1,49 @@
+extends layout
+block append dependencies
+    script(src='/javascripts/painel_analise.js')
+    script(src='https://cdn.jsdelivr.net/npm/chart.js@2.8.0')
+
+
+block content
+    nav#menu-painel
+        a(href="/painel/config") Configurações
+        a(href="/painel/contas") Contas
+        a(href="/painel/analise") Análise
+    #painel-analise.container
+        include messages.pug
+        #header
+            p Aqui você pode analisar a movimentação de clientes em um determinado dia.
+            input#data(type="date" name="data")
+            button#logs-procurar Procurar
+            br
+            span ou abrir de um arquivo salvo
+            br
+            input#logs-abrir(type="file" accept=".json")
+        #graficos-info
+            span#graficos-info-data
+            span#graficos-info-num
+        #graficos-container
+            #grafico-horario-geral-container.chart-container.grafico-line-container
+                canvas#grafico-horario-geral
+            #grafico-horario-portas-entraram-container.chart-container.grafico-line-container
+                canvas#grafico-horario-portas-entraram
+            #grafico-horario-portas-sairam-container.chart-container.grafico-line-container
+                canvas#grafico-horario-portas-sairam
+            #grafico-portas-entraram-container.chart-container.grafico-pie-container
+                canvas#grafico-portas-entraram
+            #grafico-portas-sairam-container.chart-container.grafico-pie-container
+                canvas#grafico-portas-sairam
+            #grafico-porta0-container.chart-container.grafico-line-container
+                canvas#grafico-porta0
+            #grafico-porta1-container.chart-container.grafico-line-container
+                canvas#grafico-porta1
+            #grafico-porta2-container.chart-container.grafico-line-container
+                canvas#grafico-porta2
+            #grafico-porta3-container.chart-container.grafico-line-container
+                canvas#grafico-porta3
+            #grafico-porta4-container.chart-container.grafico-line-container
+                canvas#grafico-porta4
+            #grafico-porta5-container.chart-container.grafico-line-container
+                canvas#grafico-porta5
+        button#logs-apagar.red Apagar
+        button#logs-exportar Exportar

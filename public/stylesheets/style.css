@@ -1,0 +1,221 @@
+* { box-sizing: border-box; }
+body {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #222;
+}
+a {
+  color: #444;
+}
+#global-header {
+  background: #222;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding: 0.25rem 0;
+}
+#global-header a {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+
+}
+.container {
+  padding: 1rem;
+  width: 100%;
+}
+nav {
+  background: #333;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  padding: 0.25rem 0;
+}
+nav a {
+  padding: 0.5rem;
+  color: #bbb;
+  text-decoration: none;
+}
+nav a.atual {
+  color: #fff;
+  font-weight: bold;
+}
+nav#menu-painel {
+  background: #444;
+}
+
+p, h2 {
+  padding-left: 1.125rem;
+}
+form input[type=text], form input[type=password], form input[type=email], input[type=number], select {
+  box-shadow: none;
+  width: 100%;
+  border: 0.125rem #ddd solid;
+  border-radius: 0.5rem;
+  color: #222;
+  font-size: inherit;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  transition: border-color 0.5s ease;
+}
+form input[type=text]:focus, form input[type=password]:focus, form input[type=email]:focus, input[type=number]:focus, select:focus {
+  border-color: #bbb;
+}
+form input.checarValidacao[type=text]:valid, form input.checarValidacao[type=password]:valid, form input.checarValidacao[type=email]:valid {
+  border-color: rgb(0, 170, 0);
+}
+form input.checarValidacao[type=text]:invalid, form input.checarValidacao[type=password]:invalid, form input.checarValidacao[type=email]:invalid, form input.checarValidacao.erro {
+  border-color: red;
+}
+form input.checarValidacao.intocado:invalid {
+  border-color: #bbb;
+}
+form input[type=submit], button {
+  display: inline-block;
+  background-color: green;
+  border-radius: 0.5rem;
+  border: none;
+  color: #fff;
+  font-size: inherit;
+  padding: 0.875rem 1.125rem;
+  margin: 0 1rem 1rem 0;
+  outline: none;
+}
+button.blue {
+  background-color: rgb(9, 63, 133);
+}
+button.red {
+  background-color: red;
+}
+form a {
+  display: inline-block;
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5rem 0;
+}
+form input[type=submit] + span {
+  display: inline;
+  color: #444;
+}
+p.msg_erro, p.msg_sucesso {
+  display: block;
+  background: rgb(252, 37, 37);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+p.msg_sucesso {
+  background: green;
+}
+
+form label {
+  display: block;
+  padding-left: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+form#minhaconta input#senha:valid {
+  border-color: #bbb;
+}
+form#minhaconta p {
+  padding-left: 1.125rem;
+}
+
+#painel-config table {
+  text-align: center;
+  vertical-align: middle;
+}
+#painel-config input[type="submit"], #painel-config button {
+  display: inline-block;
+}
+
+#painel-contas .usuario {
+  border-bottom: 0.125rem #444 solid;
+}
+#painel-contas .usuario input.escondido {
+  position: absolute;
+  left: -1000px;
+  visibility: hidden;
+}
+#painel-contas .usuario div {
+  display: none;
+}
+#painel-contas .usuario input.escondido:checked + div {
+  display: block;
+}
+#painel-contas .usuario label {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 1rem;
+}
+#painel-contas .usuario div p {
+  padding: 0 1rem;
+  margin: 0 0 1rem 0;
+}
+#painel-contas .usuario button:disabled {
+  background-color: #bbb;
+}
+#painel-analise #header {
+  text-align: center;
+}
+#painel-analise input[type=date] {
+  display: inline-block;
+  border-radius: 0.5rem;
+  font-size: inherit;
+  padding: 0.875rem 1.125rem;
+  margin-right: 1rem;
+}
+#painel-analise #logs-exportar {
+  display: inline-block;
+  margin-left: auto;
+}
+.chart-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+#graficos-info {
+  margin-bottom: 1rem;
+}
+#graficos-info span {
+  display: block;
+}
+#graficos-info #graficos-info-data {
+  font-size: 1.125;
+  font-weight: bold;
+}
+input[type="file"] {
+  margin: 1rem 0;
+}
+@media only screen and (min-width: 488px) {
+  .grafico-pie-container {
+      display: inline-block;
+      width: 50%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  nav {
+    justify-content: center;
+  }
+  nav a {
+    margin: 0 1rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .container {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+}

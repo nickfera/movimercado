@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    div.container
+        form#login(action="/login" method="post")
+            h2 Faça o login
+            include messages.pug
+            input.checarValidacao#email.intocado(type="email" name="email" placeholder="E-mail" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" autocomplete required  value= typeof email != 'undefined' ? email : '')
+            input.checarValidacao#senha.intocado(type="password" name="senha" placeholder="Senha" pattern="[\\w\\-]{8,16}" required)
+            input#submit(type="submit" value="Entrar")
+            a(href="/cadastro") Crie uma conta aqui.
+    script(src="/javascripts/login.js")

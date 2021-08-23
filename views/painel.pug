@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    nav#menu-painel
+        a(href="/painel/config") Configurações
+        a(href="/painel/contas") Contas
+        a(href="/painel/analise") Análise
+    div.container
+        h2 Painel de Controle
+        p #[b Aviso Importante]
+        p Tem as novas funções de #[b adicionar] e #[b desativar] portas, porém não está completamente implementado.
+        ul
+            li As portas não ativas não aparecerão para selecionar no aplicativo contador.
+            li As portas que forem adicionadas não podem ser removidas (só manualmente) para evitar conflitos nas análises.
+        p As mudanças só serão efetivadas se clicar no botão "Salvar". Para voltar atrás, recarregue ou saia da página.
+        p Obrigado pela compreensão.
+        br
+        br
+        p Aqui você pode gerenciar as configurações do site e do aplicativo, gerenciar as contas cadastradas e analisar os registros de movimentação de clientes.

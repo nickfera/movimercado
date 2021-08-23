@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    div.container
+        include messages.pug
+        p
+            if nome
+                b Olá #{nome}!
+            else
+                b Olá visitante!
+        p Desenvolvido por 
+            a(href="https://nickfera.com.br" target="_blank") Nicholas Ferreira Araujo

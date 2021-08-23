@@ -1,0 +1,10 @@
+nav#menu-principal
+    if aut
+        a(href="/app") App
+        a(href="/conta") Minha Conta
+        if admin
+            a(href="/painel") Painel
+        a(href="/logout") Sair
+    else
+        a(href="/login") Login
+        a(href="/cadastro") Cadastro

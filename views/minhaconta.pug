@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    div.container
+        include messages.pug
+        form#minhaconta(action="/conta" method="post")
+            p Olá #{nome}. Aqui você pode alterar sua senha.
+            p
+                b Meu e-mail: 
+                span #{email}
+            input.checarValidacao.intocado(type="password" id="senha" name="senha" placeholder="Senha atual" pattern="[\\w\\-]{8,16}" required)
+            input.checarValidacao.intocado(type="password" id="novasenha1" name="novasenha1" placeholder="Nova senha" pattern="[\\w\\-]{8,16}" required)
+            input.checarValidacao.intocado(type="password" id="novasenha2" name="novasenha2" placeholder="Confirmar Senha" pattern="[\\w\\-]{8,16}" required)
+            input(type="submit" value="Alterar Senha")
+    script(src="/javascripts/minhaconta.js")

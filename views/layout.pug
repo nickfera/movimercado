@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name="description" content="MoviMercado. O aplicativo para monitorar o movimento do mercado municipal.")
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title= title
+    block dependencies
+      link(rel='stylesheet', href='/stylesheets/style.css')
+      script(src='/javascripts/scripts.js')
+  body
+    div#global-header
+      a(href="/") MoviMercado
+    include nav.pug
+    block content

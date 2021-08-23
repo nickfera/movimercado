@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    div.container
+        form#cadastro(action="/cadastro" method="post")
+            h2 Criar sua conta
+            include messages.pug
+            input.checarValidacao#nome.intocado(type="text" name="nome" placeholder="Nome" pattern="[a-zA-Z\s]{3,30}" autocomplete required value= typeof nome != 'undefined' ? nome : '')
+            input.checarValidacao#email.intocado(type="email" name="email" placeholder="E-mail" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" autocomplete required  value= typeof email != 'undefined' ? email : '')
+            input.checarValidacao#senha.intocado(type="password" name="senha" placeholder="Senha" pattern="[\\w\\-]{8,16}" required)
+            input.checarValidacao#senha2.intocado(type="password" name="senha2" placeholder="Confirmar Senha" pattern="[\\w\\-]{8,16}" required)
+            input#submit(type="submit" value="Criar Conta")
+            span Já tem? 
+            a(href="/login") Faça o login.
+    script(src="/javascripts/cadastro.js")

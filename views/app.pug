@@ -1,0 +1,21 @@
+extends layout
+
+block append dependencies
+    link(href="/stylesheets/app.css" rel="stylesheet")
+
+block content
+    div.container
+        include messages.pug
+        div#contador
+            select#contador-entrada(name="entrada")
+                option(value="" selected hidden) Selecionar entrada
+                each porta in portas
+                    if porta.ativado
+                        option(value= porta.id) #{porta.nome}
+            b MAX:
+            canvas(height="288" width="288")
+            div.buttons
+                button#btn-add +
+                button#btn-sub -
+    script(src='javascripts/socket.io.min.js')
+    script(src='javascripts/app.js')

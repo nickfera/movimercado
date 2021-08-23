@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    nav#menu-painel
+        a(href="/painel/config") Configurações
+        a(href="/painel/contas") Contas
+        a(href="/painel/analise") Análise
+    div.container#painel-contas
+        include messages.pug
+        each usuario, i in usuarios
+            div.usuario(id='usuario-'+i)
+                label(for='toggle-'+i)
+                    b= usuario.nome
+                    span Toque para abrir/fechar
+                input.escondido(type='checkbox' id='toggle-'+i)
+                div
+                    p E-mail: 
+                        span(id='email-'+i)= usuario.email
+                    p Administrador:
+                        -if(usuario.privilegios == 1)
+                            input(type='checkbox' value='1' name='privilegios-'+i id='privilegios-'+i checked)
+                        -else
+                            input(type='checkbox' value='1' name='privilegios-'+i id='privilegios-'+i)
+                    button(disabled id='btn-salvar-'+i) Salvar
+                    button.red(id='btn-deletar-'+i) Deletar
+    script(src='/javascripts/painel_contas.js')
